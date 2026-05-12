@@ -281,15 +281,15 @@ function animate() {
     batteryFill.style.opacity = 100;
   }
 
-  if (currentLevel === 0) {
-    if(camera.position.distanceTo(FLASHOBJ.position) < 1.8) {
-      if(INTERACT===1) {
-        PickUpFlashlight(); FLASHLIGHTON=true;
-      }
+
+  if(camera.position.distanceTo(FLASHOBJ.position) < 1.8) {
+    if(INTERACT===1) {
+      PickUpFlashlight(); FLASHLIGHTON=true;
     }
   }
 
-  }
+
+}
 
   if(renderer && scene && camera) {
     renderer.render(scene, camera);
