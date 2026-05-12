@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+<script>
+  window.onerror = (msg, src, line, col, err) => {
+    alert(msg + "\n" + line + ":" + col);
+  };
+</script>
 
+<title>First Person Horror Game</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="instructions">
+  <h1>Abandoned Facility</h1>
+  <p>WASD = Move | Mouse/Touch = Look | E = Hide near closets | F = Flash observer</p>
+  <br><br>
+  <button id="tutorialBtn">TUTORIAL (Easy)</button>
+  <button id="newGameBtn">NEW GAME (Nightmare)</button>
+  <button id="settingsBtn">Settings</button>
+</div>
+  <div id="JUMPSCARE">
+  <img src="Jumpscare.jpeg">
+</div>
+  <div id="IFIWASFASTER">
+  <img src="IFIWASFASTER.jpeg">
+</div>
+  <div id="BLACK1">
+  <img src="BLACK1.jpeg">
+</div>
+  <div id="ITKILLEDHIM">
+  <img src="ITKILLEDHIM.jpeg">
+</div>
+  <div id="BLACK2">
+  <img src="BLACK2.jpeg">
+</div>
+
+
+
+<div id="C" class="Message">IT WILL BE BACK<br>THEY ARE MANY</div>
+<div id="L1" class="Message">IT HATES LIGHT<br><br><br><br><br><br><br><br><br>PRESS F</div>
+<div id="L2" class="Message">THEY ARE HUNGRY<br>RUN<br><br>RUN<br>HIDE   RUNHI  DE<br>RUHINDE<br>RUNRUN  HIDE  RUN<br><br>RUN<br>PRESS SHIFT</div>
+<div id="L25" class="Message"><br><br><br><br><br><br><br><br><br><br><br><br>HIDE IN THE CLOSET<br>PRESS E</div>
+<div id="A" class="Message">.....A flashlight....<br>[PRESS E]</div>
+<div id="B" class="Message">Where am i?....</div>
+<div id="N" class="Message">I feel nauseous...</div>
+<div id="Q" class="Message">out of battery....</div>
+<div id="W" class="Message">Where does this wire lead?...<br>Maybe I can find a way out...</div>
+<div id="E" class="Message">I see a door!<br>but it doesnt lead outside...</div>
+<div id="OUT" class="Message">I want out...</div>
+<div id="CANT" class="Message">What just happened... that <em><stong>thing</stong></em> is gone...</div>
+<div id="CUSTOM" class="Message"></div>
+<div id="levelInfo">Level: 1</div>
+<div id="coordsInfo" style="position: fixed; top: 45px; right: 20px; color: #fff; font-family: sans-serif; font-size: 1.2em; z-index: 85; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px;">Pos: (0.0, 1.6, 0.0)</div>
+<div id="redOverlay"></div>
+<div id="distortionOverlay"></div>
+<div id="healthBar"><div id="healthFill"></div></div>
+<div id="batteryBar"><div id="batteryFill"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+
+<script src="index.js"></script>
+</body>
+</html>
