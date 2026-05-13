@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
+<head> 
 <script>
-  window.onerror = (msg, src, line, col, err) => {
-    alert(msg + "\n" + line + ":" + col);
-  };
+ window.onerror = (msg, src, line, col, err) => {
+   alert(msg + "\n" + line + ":" + col);
+ };
 </script>
 
-<title>First Person Horror Game</title>
+
+<title>game</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
+
 <div id="coordsInfo" style="position: fixed; top: 45px; right: 20px; color: #fff; font-family: sans-serif; font-size: 1.2em; z-index: 85; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px;">Pos: (0.0, 1.6, 0.0)</div>
 <div id="healthBar"><div id="healthFill"></div></div>
 <div id="batteryBar"><div id="batteryFill"></div></div>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
 
-<script src="index.js" onload="LVL1()"></script>
+
+<script src="index.js"></script>
 </body>
 </html>

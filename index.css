@@ -1,29 +1,29 @@
 html, body { margin:0; padding:0; overflow:hidden; background:#111; }
-  canvas {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-  }
-  #healthBar {
-    position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
-    width: 220px; height: 18px; border: 2px solid #444; background: rgba(0,0,0,0.6);
-    border-radius: 10px; overflow: hidden; z-index: 80;
-  }
-  #batteryBar {
-    position: fixed; top: 220px; left: 5%; transform: translateX(+50%);
-    width: 100px; height: 160px; border: 2px solid #444; background: rgba(0,0,0,0.6);
-    border-radius: 10px; overflow: hidden; z-index: 80; opacity: 0; rotate: 180deg;
-  }
-  #batteryFill {
-    height: 100%; width: 100%; background: linear-gradient(to bottom, #00ff66, #f7ff00);
-    transition: width 0.15s ease-out, background 0.2s linear; opacity: 0;
-  }
-  #healthFill {
-    height: 100%; width: 100%; background: linear-gradient(to right, #00ff66, #f7ff00);
-    transition: width 0.15s ease-out, background 0.2s linear;
-  }
-  
+ canvas {
+   display: block;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 0;
+ }
+ #healthBar {
+   position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+   width: 220px; height: 18px; border: 2px solid #444; background: rgba(0,0,0,0.6);
+   border-radius: 10px; overflow: hidden; z-index: 80;
+ }
+ #batteryBar {
+   position: fixed; top: 220px; left: 5%; transform: translateX(+50%);
+   width: 100px; height: 160px; border: 2px solid #444; background: rgba(0,0,0,0.6);
+   border-radius: 10px; overflow: hidden; z-index: 80; opacity: 0; rotate: 180deg;
+ }
+ #batteryFill {
+   height: 100%; width: 100%; background: linear-gradient(to bottom, #00ff66, #f7ff00);
+   transition: width 0.15s ease-out, background 0.2s linear; opacity: 0;
+ }
+ #healthFill {
+   height: 100%; width: 100%; background: linear-gradient(to right, #00ff66, #f7ff00);
+   transition: width 0.15s ease-out, background 0.2s linear;
+ }
+ 
