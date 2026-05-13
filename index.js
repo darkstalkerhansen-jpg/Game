@@ -172,10 +172,8 @@ function loadWalls(iteration=1) {
   
    scene.add(treea);
    colliders.push(treea);
- }
-);
-const treeaz = new THREE.Group();
-treeaz.add(treea);
+ });
+
 
  trunk = new THREE.Mesh(
    new THREE.CylinderGeometry(0.5,0.5,3),
@@ -208,11 +206,6 @@ treeaz.add(treea);
  treecluster.add(tree2);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
- treecluster.remove(tree1);
- treecluster.remove(tree2);
- treecluster.remove(tree);
- treecluster.remove(tree3);
- treecluster.add(treeaz);
  scene.add(treecluster);
  const treecluster2 = treecluster.clone();
  treecluster2.position.set(7,0,12);
