@@ -164,7 +164,7 @@ function loadWalls(iteration=1) {
   const loader = new THREE.GLTFLoader();
  loader.load('./tree.glb', (gltf) => {
    treea = gltf.scene;
-   treea.scale.set(0.001, 0.001, 0.001); // Adjusted smaller size
+   treea.scale.set(0.0000001); // Adjusted smaller size
    treea.position.set(5,0,-5);
    treea.rotation.y = Math.random() * Math.PI * 2;
   
