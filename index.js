@@ -176,6 +176,19 @@ function loadWalls(iteration=1) {
  });
 
 
+const loader = new GLTFLoader();
+loader.load('tree 2.glb', (gltf) => {
+    const model = gltf.scene;
+    
+    // Scale the model down
+    model.scale.setScalar(0.1);
+    model.position.set(-5,0,5); 
+    
+    scene.add(model);
+});
+
+
+
  trunk = new THREE.Mesh(
    new THREE.CylinderGeometry(0.5,0.5,3),
    new THREE.MeshPhongMaterial({
