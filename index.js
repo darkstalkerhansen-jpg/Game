@@ -176,7 +176,6 @@ function loadWalls(iteration=1) {
  });
 
 
-const loader = new GLTFLoader();
 loader.load('tree 2.glb', (gltf) => {
     const model = gltf.scene;
     
