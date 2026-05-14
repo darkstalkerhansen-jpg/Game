@@ -35,6 +35,7 @@ html, body { margin:0; padding:0; overflow:hidden; background:#111; }
     cursor: pointer;
     outline-offset: 4px;
     z-index: 100;
+    user-select: none;
   }
   .front {
     display: block;
@@ -46,6 +47,7 @@ html, body { margin:0; padding:0; overflow:hidden; background:#111; }
     transform: translateY(-4px); /* Creates the 3D lift */
     transition: transform 250ms cubic-bezier(.3, .7, .4, 1);
     z-index:100;
+    user-select: none;
   }
   .pushable:hover .front {
     transform: translateY(-6px); /* Lifts slightly more on hover */

@@ -432,54 +432,6 @@ function animate() {
  renderer.render(scene, camera);
 }
 
-function movement(direction) {
-  if (direction===f) {
-    moveF=1;
-  } else if (direction===-f) {
-    moveF=0;
-  } else if (direction===l) {
-    moveL=1;
-  } else if (direction===-l) {
-    moveL=0;
-  } else if (direction===d) {
-    moveB=1;
-  } else if (direction===-d) {
-    moveB=0;
-  } else if (direction===r) {
-    moveR=1;
-  } else if (direction===-r) {
-    moveR=0;
-  }
-}
-
-function movementf() {
-  moveF=0;
-}
-
-function movementl() {
-  moveL=0;
-}
-
-function movementll() {
-  moveL=1;
-}
-
-function movementr() {
-  moveR=0;
-}
-
-function movementrr() {
-  moveR=1;
-}
-
-function movementd() {
-  moveB=0;
-}
-
-function movementdd() {
-  moveB=1;
-}
-
 document.addEventListener('keydown', e => {
 
      if(!canMove && WASD === true) return;
