@@ -452,6 +452,34 @@ function movement(direction) {
   }
 }
 
+function movementf() {
+  moveF=0;
+}
+
+function movementl() {
+  moveL=0;
+}
+
+function movementll() {
+  moveL=1;
+}
+
+function movementr() {
+  moveR=0;
+}
+
+function movementrr() {
+  moveR=1;
+}
+
+function movementd() {
+  moveB=0;
+}
+
+function movementdd() {
+  moveB=1;
+}
+
 document.addEventListener('keydown', e => {
 
      if(!canMove && WASD === true) return;

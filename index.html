@@ -19,11 +19,11 @@
 <div id="healthBar"><div id="healthFill"></div></div>
 <div id="batteryBar"><div id="batteryFill"></div></div>
 <div class="controls">
-  <button class="pushable" id="up" onmouseup="movement(-f)" onmousedown="movement(f)"><span class="front">▲</span></button>
+  <button class="pushable" id="up" onmouseup="movementf()" onmousedown="moveF=1"><span class="front">▲</span></button>
   <div class="row">
-    <button class="pushable" id="left" onmouseup="movement(-l)" onmousedown="movement(l)"><span class="front">◀</span></button>
-    <button class="pushable" id="down" onmousedown="movement(d)" onmouseup="movement(-d)"><span class="front">▼</span></button>
-    <button class="pushable" id="right" onmousedown="movement(r)" onmouseup="movement(-r)"><span class="front">▶</span></button>
+    <button class="pushable" id="left" onmouseup="movementl()" onmousedown="movementll()"><span class="front">◀</span></button>
+    <button class="pushable" id="down" onmousedown="movementdd()" onmouseup="movementd()"><span class="front">▼</span></button>
+    <button class="pushable" id="right" onmousedown="movementrr()" onmouseup="movementr()"><span class="front">▶</span></button>
   </div>
 </div>
 
