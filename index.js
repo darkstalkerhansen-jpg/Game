@@ -265,8 +265,8 @@ loader.load('./tree 2.glb', (gltf) => {
  }
 );
 
-addWall(3,0,-10,8,5,2);
-addWall(3,0,10,8,5,2);
+addWall(3,0,-10,1,5,15);
+addWall(3,0,10,1,5,15);
 
 }
 }
