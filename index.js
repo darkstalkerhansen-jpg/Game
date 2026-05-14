@@ -164,31 +164,6 @@ function loadWalls(iteration=1) {
  
 
 
- trunk = new THREE.Mesh(
-   new THREE.CylinderGeometry(0.5,0.5,3),
-   new THREE.MeshPhongMaterial({
-     color:0x8B4513
-   })
- );
-
- trunk.position.set(5,1.5,-5);
- trunk.visible = false;
- scene.add(trunk);
-
-  leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
- leaves.position.set(5,4,-5);
-  scene.add(leaves);
- const tree = new THREE.Group();
- tree.add(trunk);
- const tree1 = tree.clone();
- tree1.position.set(-5,0,-5);
- scene.add(tree1);
- const tree2 = tree.clone();
- tree2.position.set(5,0,-5);
- scene.add(tree2);
- const tree3 = tree.clone();
- tree3.position.set(5,0,8);
- scene.add(tree3);
   const loader = new THREE.GLTFLoader();
  loader.load('./tree.glb', (gltf) => {
    const treea = gltf.scene;
@@ -201,7 +176,43 @@ function loadWalls(iteration=1) {
   
    scene.add(treea);
    colliders.push(treea);
-   tree1.add(treea);
+   trunk = new THREE.Mesh(
+   new THREE.CylinderGeometry(0.5,0.5,3),
+   new THREE.MeshPhongMaterial({
+     color:0x8B4513
+   })
+ );
+
+ trunk.position.set(5,0,-5);
+ trunk.visible = false;
+ colliders.push(trunk);
+ scene.add(trunk);
+
+  leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
+ leaves.position.set(5,4,-5);
+  scene.add(leaves);
+ const tree = new THREE.Group();
+ tree.add(trunk);
+ tree.add(treea);
+ const tree1 = tree.clone();
+ tree1.position.set(-5,0,-5);
+ scene.add(tree1);
+ const tree2 = tree.clone();
+ tree2.position.set(5,0,-5);
+ scene.add(tree2);
+ const tree3 = tree.clone();
+ tree3.position.set(5,0,8);
+ scene.add(tree3);
+ 
+ const treecluster = new THREE.Group();
+ treecluster.add(tree);
+ treecluster.add(tree1);
+ treecluster.add(tree2);
+ treecluster.add(tree3);
+ treecluster.position.set(-10,0,5);
+ scene.add(treecluster);
+ colliders.push(camera);
+ 
  });
 
 
@@ -214,23 +225,46 @@ loader.load('./tree 2.glb', (gltf) => {
     
     scene.add(model);
     colliders.push(model);
-    tree2.add(model);
-    tree3.add(model);
-});
+    trunk = new THREE.Mesh(
+   new THREE.CylinderGeometry(0.5,0.5,3),
+   new THREE.MeshPhongMaterial({
+     color:0x8B4513
+   })
+ );
 
- const treecluster = new THREE.Group();
- treecluster.add(tree);
- treecluster.add(tree1);
- treecluster.add(tree2);
- treecluster.add(tree3);
+ trunk.position.set(-5,0,5);
+ trunk.visible = false;
+ colliders.push(trunk);
+ scene.add(trunk);
+
+  leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
+ leaves.position.set(5,4,-5);
+  scene.add(leaves);
+ const zree = new THREE.Group();
+ zree.add(trunk);
+ zree.add(model);
+ const zree1 = tree.clone();
+ zree1.position.set(-5,0,-5);
+ scene.add(zree1);
+ const zree2 = tree.clone();
+ zree2.position.set(5,0,-5);
+ scene.add(zree2);
+ const zree3 = tree.clone();
+ zree3.position.set(5,0,8);
+ scene.add(zree3);
+ 
+
+ const zreecluster = new THREE.Group();
+ treecluster.add(zree);
+ treecluster.add(zree1);
+ treecluster.add(zree2);
+ treecluster.add(zree3);
  treecluster.position.set(-10,0,5);
  scene.add(treecluster);
- const treecluster2 = treecluster.clone();
- treecluster2.position.set(7,0,12);
- scene.add(treecluster2);
- colliders.push(trunk, tree1.children[0], tree1.children[1], tree2.children[0], tree2.children[1], tree3.children[0], tree3.children[1], treecluster.children[0], treecluster.children[1], treecluster.children[2], treecluster.children[3], treecluster2.children[0], treecluster2.children[1], treecluster2.children[2], treecluster2.children[3]);
  colliders.push(camera);
  }
+);
+}
 }
 
 function checkIfInside(sphere, tree) {
