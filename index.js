@@ -173,24 +173,21 @@ function loadWalls(iteration=1) {
 
  trunk.position.set(5,1.5,-5);
  scene.add(trunk);
+ trunk.visible = false;
 
   leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
  leaves.position.set(5,4,-5);
   scene.add(leaves);
  const tree = new THREE.Group();
  tree.add(trunk);
- tree.add(leaves);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
- tree1.visible = false;
  scene.add(tree1);
  const tree2 = tree.clone();
  tree2.position.set(5,0,-5);
- tree2.visible = false;
  scene.add(tree2);
  const tree3 = tree.clone();
  tree3.position.set(5,0,8);
- tree3.visible = false;
  scene.add(tree3);
   const loader = new THREE.GLTFLoader();
  loader.load('./tree.glb', (gltf) => {
