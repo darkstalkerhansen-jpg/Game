@@ -2,7 +2,7 @@ html, body { margin:0; padding:0; overflow:hidden; background:#111; }
  canvas {
    display: block;
    position: fixed;
-   top: 30%;
+   top: 20vh;
    left: 0;
    width: 100vw;
    height: 50vh;
