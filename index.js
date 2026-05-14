@@ -161,32 +161,7 @@ function loadWalls(iteration=1) {
  hillshade.position.set(-10,-0.09,5);
  scene.add(hillshade);
  colliders.push(hillshade);
-  const loader = new THREE.GLTFLoader();
- loader.load('./tree.glb', (gltf) => {
-   const treea = gltf.scene;
-   treea.scale.setScalar(0.1); // Reduces size by a factor of 10
-
-    // Adjusted smaller size
-   treea.position.set(5,0,-5);
-  
-   // Add emissive red glow effect
-  
-   scene.add(treea);
-   colliders.push(treea);
- });
-
-
-loader.load('tree 2.glb', (gltf) => {
-    const model = gltf.scene;
-    
-    // Scale the model down
-    model.scale.setScalar(0.1);
-    model.position.set(-5,0,5); 
-    
-    scene.add(model);
-    colliders.push(model);
-});
-
+ 
 
 
  trunk = new THREE.Mesh(
@@ -207,13 +182,45 @@ loader.load('tree 2.glb', (gltf) => {
  tree.add(leaves);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
+ tree1.visible = false;
  scene.add(tree1);
  const tree2 = tree.clone();
  tree2.position.set(5,0,-5);
+ tree2.visible = false;
  scene.add(tree2);
  const tree3 = tree.clone();
  tree3.position.set(5,0,8);
+ tree3.visible = false;
  scene.add(tree3);
+  const loader = new THREE.GLTFLoader();
+ loader.load('./tree.glb', (gltf) => {
+   const treea = gltf.scene;
+   treea.scale.setScalar(0.1); // Reduces size by a factor of 10
+
+    // Adjusted smaller size
+   treea.position.set(5,0,-5);
+  
+   // Add emissive red glow effect
+  
+   scene.add(treea);
+   colliders.push(treea);
+   tree1.add(treea);
+ });
+
+
+loader.load('tree 2.glb', (gltf) => {
+    const model = gltf.scene;
+    
+    // Scale the model down
+    model.scale.setScalar(0.1);
+    model.position.set(-5,0,5); 
+    
+    scene.add(model);
+    colliders.push(model);
+    tree2.add(model);
+    tree3.add(model);
+});
+
  const treecluster = new THREE.Group();
  treecluster.add(tree);
  treecluster.add(tree1);
