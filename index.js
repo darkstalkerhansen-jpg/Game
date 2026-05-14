@@ -163,7 +163,7 @@ function loadWalls(iteration=1) {
  colliders.push(hillshade);
   const loader = new THREE.GLTFLoader();
  loader.load('./tree.glb', (gltf) => {
-   treea = gltf.scene;
+   const treea = gltf.scene;
    treea.scale.setScalar(0.1); // Reduces size by a factor of 10
 
     // Adjusted smaller size
