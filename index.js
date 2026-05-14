@@ -172,8 +172,8 @@ function loadWalls(iteration=1) {
  );
 
  trunk.position.set(5,1.5,-5);
- scene.add(trunk);
  trunk.visible = false;
+ scene.add(trunk);
 
   leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
  leaves.position.set(5,4,-5);
@@ -205,7 +205,7 @@ function loadWalls(iteration=1) {
  });
 
 
-loader.load('tree 2.glb', (gltf) => {
+loader.load('./tree 2.glb', (gltf) => {
     const model = gltf.scene;
     
     // Scale the model down
