@@ -264,6 +264,10 @@ loader.load('./tree 2.glb', (gltf) => {
  colliders.push(camera);
  }
 );
+
+addWall(3,0,-10,8,5,2);
+addWall(3,0,10,8,5,2);
+
 }
 }
 
