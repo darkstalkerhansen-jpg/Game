@@ -435,19 +435,19 @@ function animate() {
 function movement(direction) {
   if (direction===f) {
     moveF=1;
-  } else if (direction==="-f") {
+  } else if (direction===-f) {
     moveF=0;
-  } else if (direction==="l") {
+  } else if (direction===l) {
     moveL=1;
-  } else if (direction==="-l") {
+  } else if (direction===-l) {
     moveL=0;
-  } else if (direction==="d") {
+  } else if (direction===d) {
     moveB=1;
-  } else if (direction==="-d") {
+  } else if (direction===-d) {
     moveB=0;
-  } else if (direction==="r") {
+  } else if (direction===r) {
     moveR=1;
-  } else if (direction==="-r") {
+  } else if (direction===-r) {
     moveR=0;
   }
 }
