@@ -243,24 +243,24 @@ loader.load('./tree 2.glb', (gltf) => {
  const zree = new THREE.Group();
  zree.add(trunk);
  zree.add(model);
- const zree1 = tree.clone();
+ const zree1 = zree.clone();
  zree1.position.set(-5,0,-5);
  scene.add(zree1);
- const zree2 = tree.clone();
+ const zree2 = zree.clone();
  zree2.position.set(5,0,-5);
  scene.add(zree2);
- const zree3 = tree.clone();
+ const zree3 = zree.clone();
  zree3.position.set(5,0,8);
  scene.add(zree3);
  
 
  const zreecluster = new THREE.Group();
- treecluster.add(zree);
- treecluster.add(zree1);
- treecluster.add(zree2);
- treecluster.add(zree3);
- treecluster.position.set(-10,0,5);
- scene.add(treecluster);
+ zreecluster.add(zree);
+ zreecluster.add(zree1);
+ zreecluster.add(zree2);
+ zreecluster.add(zree3);
+ zreecluster.position.set(-10,0,5);
+ scene.add(zreecluster);
  colliders.push(camera);
  }
 );
