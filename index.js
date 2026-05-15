@@ -188,7 +188,7 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // Soft white light
+ const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
 scene.add(ambientLight);
 
  const tree = new THREE.Group();
@@ -295,8 +295,8 @@ function LVL1() {
  FLASHOBJ= new THREE.Mesh(
    new THREE.BoxGeometry(0.2, 0.2, 0.5),
    new THREE.MeshPhongMaterial({
-     color:0xAA0000,
-     emissive:0xAA0000,
+     color:0x111111,
+     emissive:0x111111,
      emissiveIntensity: 2,
    })
  );
@@ -304,7 +304,7 @@ function LVL1() {
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 6);
+ FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 100);
  FLASHOBJ.add(FLASHLyght);
 
 
