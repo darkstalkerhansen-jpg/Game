@@ -188,7 +188,7 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+ const ambientLight = new THREE.AmbientLight(0xffffff, 0.85); // Soft white light
 scene.add(ambientLight);
 
  const tree = new THREE.Group();
@@ -216,7 +216,7 @@ scene.add(ambientLight);
  });
 
 
-loader.load('./tree 2.glb', (gltf) => {
+loader.load('./tree2.glb', (gltf) => {
     const model = gltf.scene;
     
     // Scale the model down
@@ -304,7 +304,7 @@ function LVL1() {
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 100);
+ FLASHLyght = new THREE.PointLight(0xAA0000, 100, 6);
  FLASHOBJ.add(FLASHLyght);
 
 
