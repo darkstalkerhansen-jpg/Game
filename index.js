@@ -188,7 +188,7 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // Soft white light
+ const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // Soft white light
 scene.add(ambientLight);
 
  const tree = new THREE.Group();
@@ -239,7 +239,7 @@ loader.load('./tree 2.glb', (gltf) => {
  scene.add(zrunk);
 
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0); // Bright light
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0); // Bright light
 
 
   const zree = new THREE.Group();
@@ -377,14 +377,16 @@ function animate() {
  }
 
  const playersphere = new THREE.Mesh(
-   new THREE.SphereGeometry(5, 0, 8),
+   new THREE.SphereGeometry(1, 0, 1),
    new THREE.MeshBasicMaterial({color: 0xff0000})
  );
  playersphere.position.set(0,5,0);
  camera.position.y = 1.6; // Reset to default height before checking collisions
+ camera.add(playersphere);
   // Remove after checking to avoid cluttering the scene
  colliders.push(playersphere); // Add player's sphere for collision detection
  colliders.pop(camera);
+
 
 
  const isInside = checkIfInside(playersphere, hill);
