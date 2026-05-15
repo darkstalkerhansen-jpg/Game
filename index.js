@@ -212,7 +212,6 @@ scene.add(ambientLight);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
  scene.add(treecluster);
- colliders.push(treecluster);
  
  });
 
@@ -264,7 +263,6 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0); // Bright ligh
  zreecluster.add(zree3);
  zreecluster.position.set(-10,0,5);
  scene.add(zreecluster);
- colliders.push(zreecluster);
  }
 );
 
