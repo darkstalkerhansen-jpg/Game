@@ -17,7 +17,7 @@ let INTERACT = 0;
 // Fix typos/undefined globals referenced later
 let corruptedP = 0; // speed modifier
 let currentLevel = 1;
-const FlashlightColor = #AA0000;
+const FlashlightColor = 0xAA0000;
 
 // Declare level objects/lights as locals (avoid implicit globals)
 let FLASHOBJ = null;
@@ -295,8 +295,8 @@ function LVL1() {
  FLASHOBJ= new THREE.Mesh(
    new THREE.BoxGeometry(0.2, 0.2, 0.5),
    new THREE.MeshPhongMaterial({
-     color:#AA0000,
-     emissive:#AA0000,
+     color:0xAA0000,
+     emissive:0xAA0000,
      emissiveIntensity: 2,
    })
  );
@@ -304,7 +304,7 @@ function LVL1() {
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(#AA0000, 1.2, 6);
+ FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 6);
  FLASHOBJ.add(FLASHLyght);
 
 
