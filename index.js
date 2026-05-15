@@ -309,7 +309,7 @@ function LVL1() {
  FLASHOBJ.add(FLASHLyght);
 
 
- flashlight = new THREE.SpotLight(FlashlightColor, 100, 16, Math.PI/10, 0.6, 1.5);
+ flashlight = new THREE.SpotLight(FlashlightColor, 100, 16, Math.PI/11, 1, 1.5);
 
    flashlight.position.set(0, 0, 0);
    flashlight.target.position.set(0, 0, -1);
