@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0");
+  window.alert("version 0.1");
  resetGameState();
  LVL1();
 }
@@ -309,7 +309,7 @@ function LVL1() {
  FLASHOBJ.add(FLASHLyght);
 
 
- flashlight = new THREE.SpotLight(FlashlightColor, 100, 16, Math.PI/11, 1, 1.5);
+ flashlight = new THREE.SpotLight(FlashlightColor, 6, 16, Math.PI/10, 4, 1.5);
 
    flashlight.position.set(0, 0, 0);
    flashlight.target.position.set(0, 0, -1);
