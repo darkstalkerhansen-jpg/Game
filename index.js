@@ -305,15 +305,15 @@ function LVL1() {
    new THREE.BoxGeometry(0.2, 0.2, 0.5),
    new THREE.MeshPhongMaterial({
      color:0x111111,
-     emissive:0xffffff,
-     emissiveIntensity: 0.5,
+     emissive:0x111111,
+     emissiveIntensity: 2,
    })
  );
   
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(0xffffff, 1.2, 6);
+ FLASHLyght = new THREE.PointLight(0x111111, 1.2, 6);
  FLASHOBJ.add(FLASHLyght);
 
 
@@ -389,8 +389,8 @@ function animate() {
  );
  playersphere.position.set(0,5,0);
  camera.position.y = 1.6; // Reset to default height before checking collisions
- colliders.pop(camera); // Remove after checking to avoid cluttering the scene
- colliders.pop(playersphere); // Add player's sphere for collision detection
+  // Remove after checking to avoid cluttering the scene
+ colliders.push(playersphere); // Add player's sphere for collision detection
 
 
  const isInside = checkIfInside(playersphere, hill);
