@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.11");
+  window.alert("version 0.12");
  resetGameState();
  LVL1();
 }
@@ -305,7 +305,7 @@ function LVL1() {
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 6);
+ FLASHLyght = new THREE.PointLight(0xAA0000, 5, 6);
  FLASHOBJ.add(FLASHLyght);
 
 
