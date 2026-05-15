@@ -104,6 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
+  window.alert("version 0");
  resetGameState();
  LVL1();
 }
@@ -188,7 +189,7 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 0.85); // Soft white light
+ const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Soft white light
 scene.add(ambientLight);
 
  const tree = new THREE.Group();
@@ -304,11 +305,11 @@ function LVL1() {
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(0xAA0000, 100, 6);
+ FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 6);
  FLASHOBJ.add(FLASHLyght);
 
 
- flashlight = new THREE.SpotLight(FlashlightColor, 6, 16, Math.PI/10, 0.6, 1.5);
+ flashlight = new THREE.SpotLight(FlashlightColor, 100, 16, Math.PI/10, 0.6, 1.5);
 
    flashlight.position.set(0, 0, 0);
    flashlight.target.position.set(0, 0, -1);
