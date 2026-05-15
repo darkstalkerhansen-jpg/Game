@@ -17,7 +17,7 @@ let INTERACT = 0;
 // Fix typos/undefined globals referenced later
 let corruptedP = 0; // speed modifier
 let currentLevel = 1;
-const FlashlightColor = 0xffffff;
+const FlashlightColor = 0x111111;
 
 // Declare level objects/lights as locals (avoid implicit globals)
 let FLASHOBJ = null;
@@ -177,7 +177,7 @@ function loadWalls(iteration=1) {
    scene.add(treea);
    colliders.push(treea);
    trunk = new THREE.Mesh(
-   new THREE.CylinderGeometry(0.5,0.5,3),
+   new THREE.CylinderGeometry(0.1,0.1,1),
    new THREE.MeshPhongMaterial({
      color:0x8B4513
    })
@@ -188,7 +188,7 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // Soft white light
+ const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // Soft white light
 scene.add(ambientLight);
 
  const tree = new THREE.Group();
@@ -226,7 +226,7 @@ loader.load('./tree 2.glb', (gltf) => {
     scene.add(model);
     colliders.push(model);
     zrunk = new THREE.Mesh(
-   new THREE.CylinderGeometry(0.5,0.5,3),
+   new THREE.CylinderGeometry(0.1,0.1,1),
    new THREE.MeshPhongMaterial({
      color:0x8B4513
    })
