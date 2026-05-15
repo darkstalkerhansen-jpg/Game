@@ -191,9 +191,6 @@ function loadWalls(iteration=1) {
  const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // Soft white light
 scene.add(ambientLight);
 
-  leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
- leaves.position.set(5,4,-5);
-  scene.add(leaves);
  const tree = new THREE.Group();
  tree.add(trunk);
  tree.add(treea);
@@ -215,7 +212,7 @@ scene.add(ambientLight);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
  scene.add(treecluster);
- colliders.push(camera);
+ colliders.push(treecluster);
  
  });
 
@@ -229,28 +226,24 @@ loader.load('./tree 2.glb', (gltf) => {
     
     scene.add(model);
     colliders.push(model);
-    trunk = new THREE.Mesh(
+    zrunk = new THREE.Mesh(
    new THREE.CylinderGeometry(0.5,0.5,3),
    new THREE.MeshPhongMaterial({
      color:0x8B4513
    })
  );
 
- trunk.position.set(-5,0,5);
- trunk.visible = false;
- colliders.push(trunk);
- scene.add(trunk);
+ zrunk.position.set(-5,0,5);
+ zrunk.visible = false;
+ colliders.push(zrunk);
+ scene.add(zrunk);
 
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0); // Bright light
-scene.add(directionalLight);
 
 
-  leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
- leaves.position.set(5,4,-5);
-  scene.add(leaves);
- const zree = new THREE.Group();
- zree.add(trunk);
+  const zree = new THREE.Group();
+ zree.add(zrunk);
  zree.add(model);
  zree.add(directionalLight);
  const zree1 = zree.clone();
@@ -271,7 +264,7 @@ scene.add(directionalLight);
  zreecluster.add(zree3);
  zreecluster.position.set(-10,0,5);
  scene.add(zreecluster);
- colliders.push(camera);
+ colliders.push(zreecluster);
  }
 );
 
@@ -391,6 +384,7 @@ function animate() {
  camera.position.y = 1.6; // Reset to default height before checking collisions
   // Remove after checking to avoid cluttering the scene
  colliders.push(playersphere); // Add player's sphere for collision detection
+ colliders.pop(camera);
 
 
  const isInside = checkIfInside(playersphere, hill);
