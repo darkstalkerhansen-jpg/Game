@@ -133,8 +133,8 @@ function loadWalls(iteration=1) {
  const sky = new THREE.Mesh(skyGeo, skyMat);
  scene.add(sky);
 
- scene.add(new THREE.AmbientLight(0xffffff, 1));
-
+ 
+ 
  for(let i=-15;i<=15;i+=30){
    addWall(0,1.5,i,30,3,0.5,0x444444);
  }
@@ -188,12 +188,16 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
+ const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // Soft white light
+scene.add(ambientLight);
+
   leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
  leaves.position.set(5,4,-5);
   scene.add(leaves);
  const tree = new THREE.Group();
  tree.add(trunk);
  tree.add(treea);
+ tree.add(ambientLight);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
  scene.add(tree1);
@@ -237,12 +241,18 @@ loader.load('./tree 2.glb', (gltf) => {
  colliders.push(trunk);
  scene.add(trunk);
 
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0); // Bright light
+scene.add(directionalLight);
+
+
   leaves = new THREE.Mesh(new THREE.SphereGeometry(1.75), new THREE.MeshPhongMaterial({color:0x228B22}));
  leaves.position.set(5,4,-5);
   scene.add(leaves);
  const zree = new THREE.Group();
  zree.add(trunk);
  zree.add(model);
+ zree.add(directionalLight);
  const zree1 = zree.clone();
  zree1.position.set(-5,0,-5);
  scene.add(zree1);
