@@ -104,6 +104,9 @@ function flashObserver() {
 }
 
 function startGame() {
+
+  window.alert("version 0.1400");
+
   window.alert("version 0.139");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
@@ -247,7 +250,11 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0); // Bright ligh
  zree.add(directionalLight);
  const zree1 = zree.clone();
  zree1.position.set(-5,0,-5);
+
+ 
+
  colliders.push(zree1);
+
  scene.add(zree1);
  const zree2 = zree.clone();
  zree2.position.set(5,0,-5);
@@ -530,3 +537,26 @@ window.addEventListener('resize', () => {
 });
 
 startGame();
+
+
+
+
+// 1. Basic Setup (Scene, Camera, Render
+
+// 2. Prepare the Video Texture
+const video = document.getElementById('tv-video');
+video.play(); // Start the video
+const videoTexture = new THREE.VideoTexture(video);
+
+// 3. Create the "TV Screen" (a Plane)
+const geometry = new THREE.PlaneGeometry(16, 9); // 16:9 aspect ratio
+const material = new THREE.MeshBasicMaterial({ map: videoTexture });
+const screen = new THREE.Mesh(geometry, material);
+
+// 4. Angle the TV
+screen.rotation.y = Math.PI / 4; // Rotate 45 degrees
+screen.rotation.x = -0.1;        // Slight tilt back
+scene.add(screen);
+
+
+// 5. Animation L
