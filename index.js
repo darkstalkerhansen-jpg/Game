@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.137");
+  window.alert("version 0.138");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
  }
@@ -180,7 +180,7 @@ function loadWalls(iteration=1) {
   
    scene.add(treea);
    trunk = new THREE.Mesh(
-  new THREE.BoxGeometry(1,1,1)
+  new THREE.BoxGeometry(1,10,1)
    );
 
  trunk.position.set(5,0,-5);
@@ -226,7 +226,7 @@ loader.load('./tree2.glb', (gltf) => {
     scene.add(model);
     colliders.push(model);
     zrunk = new THREE.Mesh(
-    new THREE.BoxGeometry(1,1,1)
+    new THREE.BoxGeometry(1,10,1)
     );
 
  zrunk.position.set(-5,0,5);
