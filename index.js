@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.136");
+  window.alert("version 0.137");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
  }
@@ -179,13 +179,9 @@ function loadWalls(iteration=1) {
    // Add emissive red glow effect
   
    scene.add(treea);
-   colliders.push(treea);
    trunk = new THREE.Mesh(
-   new THREE.CylinderGeometry(0.1,0.1,1),
-   new THREE.MeshPhongMaterial({
-     color:0x8B4513
-   })
- );
+  new THREE.BoxGeometry(1,1,1)
+   );
 
  trunk.position.set(5,0,-5);
  trunk.visible = false;
@@ -230,11 +226,8 @@ loader.load('./tree2.glb', (gltf) => {
     scene.add(model);
     colliders.push(model);
     zrunk = new THREE.Mesh(
-   new THREE.CylinderGeometry(0.1,0.1,1),
-   new THREE.MeshPhongMaterial({
-     color:0x8B4513
-   })
- );
+    new THREE.BoxGeometry(1,1,1)
+    );
 
  zrunk.position.set(-5,0,5);
  zrunk.visible = false;
