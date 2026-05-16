@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.134");
+  window.alert("version 0.135");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
  }
@@ -427,6 +427,21 @@ function animate() {
  camera.rotation.order = "YXZ";
  camera.rotation.x = lookPitch;
  camera.rotation.y = lookYaw;
+
+// Inside your animation loop
+const downDirection = new THREE.Vector3(0, -1, 0);
+const raycaster = new THREE.Raycaster();
+
+// Set ray to start from player's current X/Z, but high up at Y=100
+raycaster.set(new THREE.Vector3(camera.position.x, 100, camera.position.z), downDirection);
+
+const intersects = raycaster.intersectObject(hill);
+
+if (intersects.length > 0) {
+    // intersects[0].point.y is the height of the ground at that spot
+        camera.position.y = intersects[0].point.y;
+        }
+
 
 
  if (FLASHLIGHTON === true) {
