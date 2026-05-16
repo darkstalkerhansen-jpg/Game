@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.12");
+  window.alert("version 0.131");
  resetGameState();
  LVL1();
 }
@@ -305,14 +305,14 @@ function LVL1() {
  FLASHOBJ.position.set(8,0,0);
  scene.add(FLASHOBJ);
  colliders.push(FLASHOBJ);
- FLASHLyght = new THREE.PointLight(0xAA0000, 5, 6);
+ FLASHLyght = new THREE.PointLight(0xAA0000, 1.2, 6);
  FLASHOBJ.add(FLASHLyght);
 
 
- flashlight = new THREE.SpotLight(FlashlightColor, 6, 16, Math.PI/10, 0.6, 5);
+ flashlight = new THREE.SpotLight(FlashlightColor, 6, 16, Math.PI/10, 0.6, 1.5);
 
    flashlight.position.set(0, 0, 0);
-   flashlight.target.position.set(0, 0, -1);
+   flashlight.target.position.set(0, 0, 0);
    camera.add(flashlight);
    camera.add(flashlight.target);
    scene.add(camera);
