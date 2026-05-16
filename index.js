@@ -107,7 +107,6 @@ function startGame() {
 
   window.alert("version 0.1400");
 
-  window.alert("version 0.139");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
  }
@@ -552,6 +551,8 @@ const videoTexture = new THREE.VideoTexture(video);
 const geometry = new THREE.PlaneGeometry(16, 9); // 16:9 aspect ratio
 const material = new THREE.MeshBasicMaterial({ map: videoTexture });
 const screen = new THREE.Mesh(geometry, material);
+screen.scale.setScalar(0.5);
+screen.position.y = 20;
 
 // 4. Angle the TV
 screen.rotation.y = Math.PI / 4; // Rotate 45 degrees
