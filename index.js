@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.135");
+  window.alert("version 0.136");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
  }
@@ -439,7 +439,7 @@ const intersects = raycaster.intersectObject(hill);
 
 if (intersects.length > 0) {
     // intersects[0].point.y is the height of the ground at that spot
-        camera.position.y = intersects[0].point.y;
+        camera.position.y = intersects[0].point.y + 3;
         }
 
 
