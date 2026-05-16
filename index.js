@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.138");
+  window.alert("version 0.139");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
  }
@@ -197,12 +197,15 @@ scene.add(ambientLight);
  tree.add(ambientLight);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
+  colliders.push(tree1);
  scene.add(tree1);
  const tree2 = tree.clone();
  tree2.position.set(5,0,-5);
+  colliders.push(tree2);
  scene.add(tree2);
  const tree3 = tree.clone();
  tree3.position.set(5,0,8);
+  colliders.push(tree3);
  scene.add(tree3);
  
  const treecluster = new THREE.Group();
@@ -224,7 +227,7 @@ loader.load('./tree2.glb', (gltf) => {
     model.position.set(-5,0,5); 
     
     scene.add(model);
-    colliders.push(model);
+   
     zrunk = new THREE.Mesh(
     new THREE.BoxGeometry(1,10,1)
     );
@@ -244,12 +247,15 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0); // Bright ligh
  zree.add(directionalLight);
  const zree1 = zree.clone();
  zree1.position.set(-5,0,-5);
+ colliders.push(zree1);
  scene.add(zree1);
  const zree2 = zree.clone();
  zree2.position.set(5,0,-5);
+ colliders.push(zree2);
  scene.add(zree2);
  const zree3 = zree.clone();
  zree3.position.set(5,0,8);
+ colliders.push(zree3);
  scene.add(zree3);
  
 
