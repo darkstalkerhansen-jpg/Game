@@ -104,7 +104,7 @@ function flashObserver() {
 }
 
 function startGame() {
-  window.alert("version 0.133");
+  window.alert("version 0.134");
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
    
  
