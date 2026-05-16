@@ -105,6 +105,13 @@ function flashObserver() {
 
 function startGame() {
   window.alert("version 0.131");
+ if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
+   
+ 
+ } else {
+  const canvass = document.querySelector('canvas');
+  canvass.style.height = "100vh";
+ }
  resetGameState();
  LVL1();
 }
