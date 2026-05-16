@@ -109,7 +109,7 @@ function startGame() {
    
  
  } else {
-  const canvass = document.querySelector('canvas');
+  const canvass = document.getElementById('canvas');
   canvass.style.height = "100vh";
  }
  resetGameState();
