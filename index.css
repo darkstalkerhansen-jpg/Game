@@ -1,11 +1,11 @@
 html, body { margin:0; padding:0; overflow:hidden; background:#111; }
  canvas {
-   display: block;
+   display: flex;
    position: fixed;
-   top: 20vh;
+   top: 0;
    left: 0;
    width: 100vw;
-   height: 50vh;
+   height: 100vh;
    z-index: 0;
  }
  #healthBar {
@@ -38,7 +38,7 @@ html, body { margin:0; padding:0; overflow:hidden; background:#111; }
     user-select: none;
   }
   .front {
-    display: block;
+    display: flex;
     padding: 12px 24px;
     border-radius: 12px;
     font-size: 1.25rem;
