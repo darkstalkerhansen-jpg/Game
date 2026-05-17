@@ -76,18 +76,30 @@ function resetGameState() {
 }
 
 function loadhouse() {
-  const roomwall1 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3));
-  const roomwall3 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10));
-  const roomwall2 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3));
-  const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10));
+  const roomwall1 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3), new THREE.MeshPhongMaterial({
+     color:0x86b123
+   }));
+  const roomwall3 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10), new THREE.MeshPhongMaterial({
+     color:0x86b123
+   }));
+  const roomwall2 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3), new THREE.MeshPhongMaterial({
+     color:0x86b123
+   }));
+  const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10), new THREE.MeshPhongMaterial({
+     color:0x86b123
+   }));
   roomwall1.position.set(0,2.5,2);
   roomwall2.position.set(0,2.5,-2);
   roomwall3.position.set(5,2.5,0);
   roomwall4.position.set(-5,2.5,0);
 
   const room = new THREE.Group();
-  room.add(roomwall1,roomwall2,roomwall3,roomwall4);
-  room.position.set(40,2.5,0);
+  room.add(roomwall1);
+  room.add(roomwall2);
+  room.add(roomwall3);
+  room.add(roomwall4);
+  room.position.set(20,2.5,0);
+  room.scale.setScalar(0.5);
   scene.add(room);
 }
 
@@ -121,7 +133,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1402");
+  window.alert("version 0.1403");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
