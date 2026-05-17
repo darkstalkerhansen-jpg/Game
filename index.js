@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1406.4");
+  window.alert("version 0.1406.6");
 
  resetGameState();
  LVL1();
@@ -210,7 +210,6 @@ function loadWalls(iteration=1) {
   
    // Add emissive red glow effect
   
-   scene.add(treea);
    trunk = new THREE.Mesh(
   new THREE.BoxGeometry(1,10,1)
    );
@@ -226,6 +225,7 @@ scene.add(ambientLight);
  const tree = new THREE.Group();
  tree.add(treea);
  tree.add(ambientLight);
+ colliders.pop(tree);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
   
