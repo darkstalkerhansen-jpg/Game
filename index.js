@@ -88,6 +88,11 @@ function loadhouse() {
   const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(1,5,10), new THREE.MeshPhongMaterial({
      color:0x86b123
    }));
+   
+  const loader1 = new THREE.TextureLoader();
+
+// Load the image
+
   roomwall1.position.set(0,2.5,5);
   roomwall2.position.set(0,2.5,-5);
   roomwall3.position.set(5,2.5,0);
@@ -99,7 +104,14 @@ function loadhouse() {
   room.add(roomwall3);
   room.add(roomwall4);
   room.position.set(20,0,0);
-  scene.add(room);
+  loader1.load('./wood.jpeg', (texture) => {
+  // Create a material using the texture
+  const material = new THREE.MeshStandardMaterial({ map: texture });
+  
+  // Apply material to your mesh
+  const roomwood = new THREE.Mesh(room, material);
+  scene.add(roomwood);
+});
 }
 
 
@@ -132,7 +144,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1404");
+  window.alert("version 0.1405");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
@@ -170,10 +182,10 @@ function loadWalls(iteration=1) {
  
  
 
-  addWall(0,1.5,-15,30,3,0.5,0x8b0b8b);
-  addWall(0,1.5,15,30,3,0.5,0x444444);
- addWall(-15,1.5,0,0.5,3,30,0xfb0f);
-   addWall(15,1.5,0,0.5,3,30,0x8b4513);
+  addWall(0,1.5,-20,40,3,0.5,0x8b0b8b);
+  addWall(0,1.5,20,40,3,0.5,0x444444);
+ addWall(-20,1.5,0,0.5,3,40,0xfb0f);
+   addWall(20,1.5,0,0.5,3,40,0x8b4513);
  
 
  hill = new THREE.Mesh(
@@ -236,10 +248,26 @@ scene.add(ambientLight);
  tree3.position.set(5,0,8);
   
  scene.add(tree3);
-tree.add(trunk);
- tree1.add(trunk);
- tree2.add(trunk);
- tree3.add(trunk);
+
+
+ const tee = new THREE.Group();
+ tee.add(trunk);
+ colliders.push(tee);
+ const tee1 = tee.clone();
+ tee1.position.set(-5,0,-5);
+ colliders.push(tee1); 
+ scene.add(tee1);
+ const tee2 = tree.clone();
+ tee2.position.set(5,0,-5);
+  colliders.push(tee2) 
+ 
+ scene.add(tee2);
+ const tee3 = tee.clone();
+ tee3.position.set(5,0,8);
+  colliders.push(tee3); 
+ 
+ scene.add(tee3);
+
  
  
  const treecluster = new THREE.Group();
@@ -249,54 +277,77 @@ tree.add(trunk);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
  scene.add(treecluster);
+
+ const teecluster = new THREE.Group();
+ teecluster.add(tee);
+ teecluster.add(tee1);
+ teecluster.add(tee2);
+ teecluster.add(tee3);
+ teecluster.position.set(-10,0,5);
+ scene.add(teecluster);
+ 
  
  });
 
+ loader.load('./tree2.glb', (gltf) => {
+   const zreea = gltf.scene;
+   zreea.scale.setScalar(0.1); // Reduces size by a factor of 10
 
-loader.load('./tree2.glb', (gltf) => {
-    const model = gltf.scene;
-    
-    // Scale the model down
-    model.scale.setScalar(0.1);
-    model.position.set(-5,0,5); 
-    
-    scene.add(model);
-   
-    zrunk = new THREE.Mesh(
-    new THREE.BoxGeometry(1,10,1)
-    );
+    // Adjusted smaller size
+   zreea.position.set(5,0,-5);
+  
+   // Add emissive red glow effect
+  
+   scene.add(zreea);
+   zrunk = new THREE.Mesh(
+  new THREE.BoxGeometry(1,10,1)
+   );
 
- zrunk.position.set(-5,0,5);
+ zrunk.position.set(5,0,-5);
  zrunk.visible = false;
  colliders.push(zrunk);
  scene.add(zrunk);
 
+ const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Soft white light
+scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0); // Bright light
-
-
-  const zree = new THREE.Group();
- zree.add(zrunk);
- zree.add(model);
- zree.add(directionalLight);
+ const zree = new THREE.Group();
+ zree.add(zreea);
+ zree.add(ambientLight);
  const zree1 = zree.clone();
  zree1.position.set(-5,0,-5);
-
- 
-
- colliders.push(zree1);
-
+  
  scene.add(zree1);
  const zree2 = zree.clone();
  zree2.position.set(5,0,-5);
- colliders.push(zree2);
+  
  scene.add(zree2);
  const zree3 = zree.clone();
  zree3.position.set(5,0,8);
- colliders.push(zree3);
+  
  scene.add(zree3);
- 
 
+
+ const zee = new THREE.Group();
+ zee.add(zrunk);
+ colliders.push(zee);
+ const zee1 = tee.clone();
+ zee1.position.set(-5,0,-5);
+ colliders.push(zee1); 
+ scene.add(zee1);
+ const zee2 = zree.clone();
+ zee2.position.set(5,0,-5);
+  colliders.push(zee2) 
+ 
+ scene.add(zee2);
+ const zee3 = zee.clone();
+ zee3.position.set(5,0,8);
+  colliders.push(zee3); 
+ 
+ scene.add(zee3);
+
+ 
+ 
  const zreecluster = new THREE.Group();
  zreecluster.add(zree);
  zreecluster.add(zree1);
@@ -304,8 +355,17 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0); // Bright ligh
  zreecluster.add(zree3);
  zreecluster.position.set(-10,0,5);
  scene.add(zreecluster);
- }
-);
+
+ const zeecluster = new THREE.Group();
+ zeecluster.add(zee);
+ zeecluster.add(zee1);
+ zeecluster.add(zee2);
+ zeecluster.add(zee3);
+ zeecluster.position.set(-10,0,5);
+ scene.add(zeecluster);
+ 
+ 
+ });
 
 addWall(3,0,-10,1,5,15);
 addWall(3,0,10,1,5,15);
@@ -578,6 +638,8 @@ startGame();
 const video = document.getElementById('tv-video');
 video.play(); // Start the video
 const videoTexture = new THREE.VideoTexture(video);
+
+new THREE.text
 
 // 3. Create the "TV Screen" (a Plane)
 const geometry = new THREE.PlaneGeometry(16, 9); // 16:9 aspect ratio
