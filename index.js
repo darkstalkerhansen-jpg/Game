@@ -76,20 +76,20 @@ function resetGameState() {
 }
 
 function loadhouse() {
-  const roomwall1 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3), new THREE.MeshPhongMaterial({
+  const roomwall1 = new THREE.Mesh(new THREE.BoxGeometry(10,5,1), new THREE.MeshPhongMaterial({
      color:0x86b123
    }));
-  const roomwall3 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10), new THREE.MeshPhongMaterial({
+  const roomwall3 = new THREE.Mesh(new THREE.BoxGeometry(1,5,10), new THREE.MeshPhongMaterial({
      color:0x86b123
    }));
-  const roomwall2 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3), new THREE.MeshPhongMaterial({
+  const roomwall2 = new THREE.Mesh(new THREE.BoxGeometry(10,5,1), new THREE.MeshPhongMaterial({
      color:0x86b123
    }));
-  const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10), new THREE.MeshPhongMaterial({
+  const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(1,5,10), new THREE.MeshPhongMaterial({
      color:0x86b123
    }));
-  roomwall1.position.set(0,2.5,2);
-  roomwall2.position.set(0,2.5,-2);
+  roomwall1.position.set(0,2.5,5);
+  roomwall2.position.set(0,2.5,-5);
   roomwall3.position.set(5,2.5,0);
   roomwall4.position.set(-5,2.5,0);
 
@@ -98,8 +98,7 @@ function loadhouse() {
   room.add(roomwall2);
   room.add(roomwall3);
   room.add(roomwall4);
-  room.position.set(20,2.5,0);
-  room.scale.setScalar(0.5);
+  room.position.set(20,0,0);
   scene.add(room);
 }
 
@@ -133,7 +132,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1403");
+  window.alert("version 0.1404");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
