@@ -75,6 +75,22 @@ function resetGameState() {
  if(renderer?.domElement?.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
 }
 
+function loadhouse() {
+  const roomwall1 = new THREE.BoxGeometry(10,5,3);
+  const roomwall3 = new THREE.BoxGeometry(3,5,10);
+  const roomwall2 = new THREE.BoxGeometry(10,5,3);
+  const roomwall4 = new THREE.BoxGeometry(3,5,10);
+  roomwall1.position.set(0,2.5,2);
+  roomwall2.position.set(0,2.5,-2);
+  roomwall3.position.set(5,2.5,0);
+  roomwall4.position.set(-5,2.5,0);
+
+  const room = new THREE.Group();
+  room.add(roomwall1,roomwall2,roomwall3,roomwall4);
+  room.position.set(40,2.5,0);
+  scene.add(room);
+}
+
 
 function addWall(x, y, z, w=2, h=2, d=0.5, color=0x8B4513) { // Brown closets
  const wall = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), new THREE.MeshPhongMaterial({color}));
@@ -105,7 +121,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1400");
+  window.alert("version 0.1401");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
@@ -139,14 +155,15 @@ function loadWalls(iteration=1) {
  const sky = new THREE.Mesh(skyGeo, skyMat);
  scene.add(sky);
 
+ loadhouse();
  
  
- for(let i=-15;i<=15;i+=30){
-   addWall(0,1.5,i,30,3,0.5,0x444444);
- }
- for(let i=-15;i<=15;i+=30){
-   addWall(i,1.5,0,0.5,3,30,0x444444);
- }
+
+  addWall(0,1.5,-15,30,3,0.5,0x8b0b8b);
+  addWall(0,1.5,15,30,3,0.5,0x444444);
+ addWall(-15,1.5,0,0.5,3,30,0xfb0f);
+   addWall(15,1.5,0,0.5,3,30,0x8b4513);
+ 
 
  hill = new THREE.Mesh(
    new THREE.ConeGeometry(10, 1.4, 10),
