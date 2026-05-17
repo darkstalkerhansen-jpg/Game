@@ -144,7 +144,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1405");
+  window.alert("version 0.1405.5");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
@@ -638,8 +638,6 @@ startGame();
 const video = document.getElementById('tv-video');
 video.play(); // Start the video
 const videoTexture = new THREE.VideoTexture(video);
-
-new THREE.text
 
 // 3. Create the "TV Screen" (a Plane)
 const geometry = new THREE.PlaneGeometry(16, 9); // 16:9 aspect ratio
