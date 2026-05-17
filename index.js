@@ -89,7 +89,7 @@ function loadhouse() {
      color:0x86b123
    }));
    
-  const loader1 = new THREE.TextureLoader();
+  
 
 // Load the image
 
@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1406.2");
+  window.alert("version 0.1406.4");
 
  resetGameState();
  LVL1();
@@ -157,7 +157,7 @@ function loadWalls(iteration=1) {
  document.body.appendChild(renderer.domElement);
  FLASHLIGHTON=false; INTERACT = 0;
  const playerpos = camera.position;
-  const floorGeo = new THREE.PlaneGeometry(30,30);
+  const floorGeo = new THREE.PlaneGeometry(40,40);
  const floorMat = new THREE.MeshPhongMaterial({color:0xf0f0ff});
  const floor = new THREE.Mesh(floorGeo, floorMat);
  floor.rotation.x = -Math.PI/2;
@@ -261,7 +261,6 @@ scene.add(ambientLight);
  
  
  const treecluster = new THREE.Group();
- treecluster.add(tree);
  treecluster.add(tree1);
  treecluster.add(tree2);
  treecluster.add(tree3);
