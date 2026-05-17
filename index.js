@@ -76,10 +76,10 @@ function resetGameState() {
 }
 
 function loadhouse() {
-  const roomwall1 = new THREE.BoxGeometry(10,5,3);
-  const roomwall3 = new THREE.BoxGeometry(3,5,10);
-  const roomwall2 = new THREE.BoxGeometry(10,5,3);
-  const roomwall4 = new THREE.BoxGeometry(3,5,10);
+  const roomwall1 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3));
+  const roomwall3 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10));
+  const roomwall2 = new THREE.Mesh(new THREE.BoxGeometry(10,5,3));
+  const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(3,5,10));
   roomwall1.position.set(0,2.5,2);
   roomwall2.position.set(0,2.5,-2);
   roomwall3.position.set(5,2.5,0);
@@ -121,7 +121,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1401");
+  window.alert("version 0.1402");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
@@ -211,21 +211,25 @@ function loadWalls(iteration=1) {
 scene.add(ambientLight);
 
  const tree = new THREE.Group();
- tree.add(trunk);
  tree.add(treea);
  tree.add(ambientLight);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
-  colliders.push(tree1);
+  
  scene.add(tree1);
  const tree2 = tree.clone();
  tree2.position.set(5,0,-5);
-  colliders.push(tree2);
+  
  scene.add(tree2);
  const tree3 = tree.clone();
  tree3.position.set(5,0,8);
-  colliders.push(tree3);
+  
  scene.add(tree3);
+tree.add(trunk);
+ tree1.add(trunk);
+ tree2.add(trunk);
+ tree3.add(trunk);
+ 
  
  const treecluster = new THREE.Group();
  treecluster.add(tree);
