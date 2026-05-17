@@ -104,14 +104,7 @@ function loadhouse() {
   room.add(roomwall3);
   room.add(roomwall4);
   room.position.set(20,0,0);
-  loader1.load('./wood.jpeg', (texture) => {
-  // Create a material using the texture
-  const material = new THREE.MeshStandardMaterial({ map: texture });
-  
-  // Apply material to your mesh
-  const roomwood = new THREE.Mesh(room, material);
-  scene.add(roomwood);
-});
+  scene.add(room);
 }
 
 
@@ -144,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1405.5");
+  window.alert("version 0.1405.75");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
