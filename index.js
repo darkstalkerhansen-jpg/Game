@@ -137,11 +137,8 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1406");
+  window.alert("version 0.1406.2");
 
- if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
- } else {
- }
  resetGameState();
  LVL1();
 }
@@ -219,7 +216,7 @@ function loadWalls(iteration=1) {
    );
 
  trunk.position.set(5,0,-5);
- trunk.visible = false;
+ trunk.visible = true;
  colliders.push(trunk);
  scene.add(trunk);
 
@@ -297,7 +294,7 @@ scene.add(ambientLight);
    );
 
  zrunk.position.set(5,0,-5);
- zrunk.visible = false;
+ zrunk.visible = true;
  colliders.push(zrunk);
  scene.add(zrunk);
 
