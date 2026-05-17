@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1405.75");
+  window.alert("version 0.1406");
 
  if (confirm("are you in phone? press cancel if no and press ok for yes.")) {
  } else {
@@ -324,7 +324,7 @@ scene.add(ambientLight);
  const zee = new THREE.Group();
  zee.add(zrunk);
  colliders.push(zee);
- const zee1 = tee.clone();
+ const zee1 = zee.clone();
  zee1.position.set(-5,0,-5);
  colliders.push(zee1); 
  scene.add(zee1);
