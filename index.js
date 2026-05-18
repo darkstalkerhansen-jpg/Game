@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1406.8");
+  window.alert("version 0.1407");
 
  resetGameState();
  LVL1();
@@ -202,83 +202,83 @@ function loadWalls(iteration=1) {
 
   const loader = new THREE.GLTFLoader();
  
- loader.load('./tree2.glb', (gltf) => {
-   const zreea = gltf.scene;
-   zreea.scale.setScalar(0.1); // Reduces size by a factor of 10
+  loader.load('./tree.glb', (gltf) => {
+   const treea = gltf.scene;
+   treea.scale.setScalar(0.1); // Reduces size by a factor of 10
 
     // Adjusted smaller size
-   zreea.position.set(5,0,-5);
+   treea.position.set(5,0,-5);
   
    // Add emissive red glow effect
   
-   scene.add(zreea);
-   zrunk = new THREE.Mesh(
+   trunk = new THREE.Mesh(
   new THREE.BoxGeometry(1,10,1)
    );
 
- zrunk.position.set(5,0,-5);
- zrunk.visible = true;
- colliders.push(zrunk);
- scene.add(zrunk);
+ trunk.position.set(5,0,-5);
+ trunk.visible = true;
+ colliders.push(trunk);
+ scene.add(trunk);
 
  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Soft white light
 scene.add(ambientLight);
 
- const zree = new THREE.Group();
- zree.add(zreea);
- zree.add(ambientLight);
- const zree1 = zree.clone();
- zree1.position.set(-5,0,-5);
+ const tree = new THREE.Group();
+ tree.add(treea);
+ tree.add(ambientLight);
+ const tree1 = tree.clone();
+ tree1.position.set(-5,0,-5);
   
- scene.add(zree1);
- const zree2 = zree.clone();
- zree2.position.set(5,0,-5);
+ scene.add(tree1);
+ const tree2 = tree.clone();
+ tree2.position.set(5,0,-5);
   
- scene.add(zree2);
- const zree3 = zree.clone();
- zree3.position.set(5,0,8);
+ scene.add(tree2);
+ const tree3 = tree.clone();
+ tree3.position.set(5,0,8);
   
- scene.add(zree3);
+ scene.add(tree3);
 
 
- const zee = new THREE.Group();
- zee.add(zrunk);
- colliders.push(zee);
- const zee1 = zee.clone();
- zee1.position.set(-5,0,-5);
- colliders.push(zee1); 
- scene.add(zee1);
- const zee2 = zree.clone();
- zee2.position.set(5,0,-5);
-  colliders.push(zee2) 
+ const tee = new THREE.Group();
+ tee.add(trunk);
+ colliders.push(tee);
+ const tee1 = tee.clone();
+ tee1.position.set(-5,0,-5);
+ colliders.push(tee1); 
+ scene.add(tee1);
+ const tee2 = tree.clone();
+ tee2.position.set(5,0,-5);
+  colliders.push(tee2) 
  
- scene.add(zee2);
- const zee3 = zee.clone();
- zee3.position.set(5,0,8);
-  colliders.push(zee3); 
+ scene.add(tee2);
+ const tee3 = tee.clone();
+ tee3.position.set(5,0,8);
+  colliders.push(tee3); 
  
- scene.add(zee3);
+ scene.add(tee3);
 
  
  
- const zreecluster = new THREE.Group();
- zreecluster.add(zree);
- zreecluster.add(zree1);
- zreecluster.add(zree2);
- zreecluster.add(zree3);
- zreecluster.position.set(-10,0,5);
- scene.add(zreecluster);
+ const treecluster = new THREE.Group();
+ treecluster.add(tree1);
+ treecluster.add(tree2);
+ treecluster.add(tree3);
+ treecluster.position.set(-10,0,5);
+ scene.add(treecluster);
 
- const zeecluster = new THREE.Group();
- zeecluster.add(zee);
- zeecluster.add(zee1);
- zeecluster.add(zee2);
- zeecluster.add(zee3);
- zeecluster.position.set(-10,0,5);
- scene.add(zeecluster);
+ const teecluster = new THREE.Group();
+ teecluster.add(tee);
+ teecluster.add(tee1);
+ teecluster.add(tee2);
+ teecluster.add(tee3);
+ teecluster.position.set(-10,0,5);
+ scene.add(teecluster);
  
  
  });
+
+
 
 addWall(3,0,-10,1,5,15);
 addWall(3,0,10,1,5,15);
