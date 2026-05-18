@@ -76,44 +76,16 @@ function resetGameState() {
 }
 
 function loadhouse() {
-  const roomwall1 = new THREE.Mesh(new THREE.BoxGeometry(10,5,1), new THREE.MeshPhongMaterial({
-     color:0x86b123
-   }));
-  const roomwall3 = new THREE.Mesh(new THREE.BoxGeometry(1,5,10), new THREE.MeshPhongMaterial({
-     color:0x86b123
-   }));
-  const roomwall2 = new THREE.Mesh(new THREE.BoxGeometry(10,5,1), new THREE.MeshPhongMaterial({
-     color:0x86b123
-   }));
-  const roomwall4 = new THREE.Mesh(new THREE.BoxGeometry(1,5,10), new THREE.MeshPhongMaterial({
-     color:0x86b123
-   }));
-   
-  
 
-// Load the image
+const newLoader = new THREE.GLTFLoader();
 
-  roomwall1.position.set(0,2.5,5);
-  roomwall2.position.set(0,2.5,-5);
-  roomwall3.position.set(5,2.5,0);
-  roomwall4.position.set(-5,2.5,0);
-
-  const room = new THREE.Group();
-  room.add(roomwall1);
-  room.add(roomwall2);
-  room.add(roomwall3);
-  room.add(roomwall4);
-  room.position.set(20,0,0);
-  scene.add(room);
-
-  const newLoader = new THREE.GLTFLoader();
-  
   newLoader.load('./house.glb', (gltf) => {
    const housemodel = gltf.scene;
-   housemodel.scale.setScalar(100); // Reduces size by a factor of 10
+   housemodel.scale.setScalar(150); // Reduces size by a factor of 10
 
     // Adjusted smaller size
-   housemodel.position.set(0,0,0);
+   housemodel.position.set(30,0,0);
+   housemodel.rotation.y = Math.PI / 2;
    scene.add(housemodel);
   
    // Add emissive red glow effect
@@ -151,7 +123,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1413");
+  window.alert("version 0.1414");
 
  resetGameState();
  LVL1();
@@ -188,7 +160,6 @@ function loadWalls(iteration=1) {
 
   addWall(0,1.5,-20,40,3,0.5,0x8b0b8b);
   addWall(0,1.5,20,40,3,0.5,0x444444);
- addWall(-20,1.5,0,0.5,3,40,0xfb0f);
    addWall(20,1.5,0,0.5,3,40,0x8b4513);
  
 
