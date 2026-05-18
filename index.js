@@ -86,7 +86,9 @@ const newLoader = new THREE.GLTFLoader();
     // Adjusted smaller size
    housemodel.position.set(30,0,0);
    housemodel.rotation.y = -Math.PI / 2;
-   addCollider(1,10,20,10);
+   addCollider(1,18.5,15,3);
+   addCollider(2,3,8,18);
+   addCollider(1,18,22.5,8.2);
 
    scene.add(housemodel);
   
@@ -95,7 +97,7 @@ const newLoader = new THREE.GLTFLoader();
  
 }
 
-function addCollider(xorz, start, end, other) {
+function addCollider(xorz, start, end, other, y=1000) {
     const midpoint = (start + end) / 2;
     const distance = Math.abs(start - end); // Simple and always accurate
 
@@ -109,7 +111,7 @@ function addCollider(xorz, start, end, other) {
         scene.add(colliderx); // Crucial step
     } else if (xorz === 2) {
         const colliderz = new THREE.Mesh(
-            new THREE.BoxGeometry(1, 1000, distance),
+            new THREE.BoxGeometry(1, y, distance),
             new THREE.MeshBasicMaterial({ color: 0x00ff00 })
         );
         colliderz.position.set(other, 0, midpoint);
@@ -148,7 +150,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1417");
+  window.alert("version 0.1418");
 
  resetGameState();
  LVL1();
