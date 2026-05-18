@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1409...");
+  window.alert("version 0.1410");
 
  resetGameState();
  LVL1();
@@ -235,6 +235,42 @@ scene.add(ambientLight);
  const tree3 = tree.clone();
  tree3.position.set(5,8,8);
   
+ const tee = new THREE.Group();
+ tee.add(trunk);
+ colliders.push(tee);
+ const tee1 = tee.clone();
+ tee1.position.set(-5,0,-5);
+ colliders.push(tee1); 
+ scene.add(tee1);
+ const tee2 = tee.clone();
+ tee2.position.set(5,0,-5);
+  colliders.push(tee2) 
+ 
+ scene.add(tee2);
+ const tee3 = tee.clone();
+ tee3.position.set(5,0,8);
+  colliders.push(tee3); 
+ 
+ scene.add(tee3);
+
+ const treecluster = new THREE.Group();
+ treecluster.add(tree);
+ treecluster.add(tree1);
+ treecluster.add(tree2);
+ treecluster.add(tree3);
+ treecluster.position.set(-10,0,5);
+ scene.add(treecluster);
+
+ 
+ const teecluster = new THREE.Group();
+ teecluster.add(tee);
+ teecluster.add(tee1);
+ teecluster.add(tee2);
+ teecluster.add(tee3);
+ teecluster.position.set(-10,0,5);
+ scene.add(teecluster);
+ 
+ 
 
 
  });
@@ -285,7 +321,7 @@ scene.add(ambientLight);
  zee1.position.set(-5,0,-5);
  colliders.push(zee1); 
  scene.add(zee1);
- const zee2 = zree.clone();
+ const zee2 = zee.clone();
  zee2.position.set(5,0,-5);
   colliders.push(zee2) 
  
@@ -303,7 +339,7 @@ scene.add(ambientLight);
  zreecluster.add(zree1);
  zreecluster.add(zree2);
  zreecluster.add(zree3);
- zreecluster.position.set(10,0,5);
+ zreecluster.position.set(-8,0,10);
  scene.add(zreecluster);
 
  const zeecluster = new THREE.Group();
@@ -311,7 +347,7 @@ scene.add(ambientLight);
  zeecluster.add(zee1);
  zeecluster.add(zee2);
  zeecluster.add(zee3);
- zeecluster.position.set(10,0,5);
+ zeecluster.position.set(-8,0,10);
  scene.add(zeecluster);
  
  
