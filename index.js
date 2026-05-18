@@ -89,6 +89,10 @@ const newLoader = new THREE.GLTFLoader();
    addCollider(1,18.5,15,3);
    addCollider(2,3,8,18);
    addCollider(1,18,22.5,8.2);
+   addCollider(1,22.2,33.3,3);
+   addCollider(2,3,-7,33.3);
+   addCollider(1,33.3,15,-6.5);
+
 
    scene.add(housemodel);
   
@@ -108,6 +112,7 @@ function addCollider(xorz, start, end, other, y=1000) {
         );
         colliderx.position.set(midpoint, 0, other);
         colliders.push(colliderx);
+        colliderx.visible = false;
         scene.add(colliderx); // Crucial step
     } else if (xorz === 2) {
         const colliderz = new THREE.Mesh(
@@ -116,6 +121,7 @@ function addCollider(xorz, start, end, other, y=1000) {
         );
         colliderz.position.set(other, 0, midpoint);
         colliders.push(colliderz);
+        colliderz.visible = false;
         scene.add(colliderz);
     }
 }
@@ -150,7 +156,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1418");
+  window.alert("version 0.1419");
 
  resetGameState();
  LVL1();
