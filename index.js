@@ -105,6 +105,20 @@ function loadhouse() {
   room.add(roomwall4);
   room.position.set(20,0,0);
   scene.add(room);
+
+  const newLoader = new THREE.GLTFLoader();
+  
+  newLoader.load('./house.glb', (gltf) => {
+   const housemodel = gltf.scene;
+   housemodel.scale.setScalar(0.5); // Reduces size by a factor of 10
+
+    // Adjusted smaller size
+   housemodel.position.set(5,0,-5);
+   scene.add(housemodel);
+  
+   // Add emissive red glow effect
+  });
+ 
 }
 
 
@@ -137,7 +151,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1410");
+  window.alert("version 0.1411");
 
  resetGameState();
  LVL1();
