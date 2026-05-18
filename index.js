@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1408");
+  window.alert("version 0.1409");
 
  resetGameState();
  LVL1();
@@ -227,18 +227,15 @@ scene.add(ambientLight);
  tree.add(treea);
  tree.add(ambientLight);
  const tree1 = tree.clone();
- tree1.position.set(-5,0,-5);
+ tree1.position.set(-5,1,-5);
   
- scene.add(tree1);
  const tree2 = tree.clone();
- tree2.position.set(5,0,-5);
+ tree2.position.set(5,4,-5);
   
- scene.add(tree2);
  const tree3 = tree.clone();
- tree3.position.set(5,0,8);
+ tree3.position.set(5,8,8);
   
- scene.add(tree3);
-
+ 
 
  const tee = new THREE.Group();
  tee.add(trunk);
@@ -261,7 +258,8 @@ scene.add(ambientLight);
  
  
  const treecluster = new THREE.Group();
- treecluster.add(tree)
+ treecluster.add(tree);
+ treecluster.add(tree1);
  treecluster.add(tree2);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
