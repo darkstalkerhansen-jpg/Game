@@ -216,7 +216,7 @@ function loadWalls(iteration=1) {
    );
 
  trunk.position.set(5,0,-5);
- trunk.visible = true;
+ trunk.visible = false;
  colliders.push(trunk);
  scene.add(trunk);
 
@@ -227,13 +227,13 @@ scene.add(ambientLight);
  tree.add(treea);
  tree.add(ambientLight);
  const tree1 = tree.clone();
- tree1.position.set(-5,1,-5);
+ tree1.position.set(-5,0,-5);
   
  const tree2 = tree.clone();
- tree2.position.set(5,4,-5);
+ tree2.position.set(5,0,-5);
   
  const tree3 = tree.clone();
- tree3.position.set(5,8,8);
+ tree3.position.set(5,0,8);
   
  const tee = new THREE.Group();
  tee.add(trunk);
@@ -290,7 +290,7 @@ scene.add(ambientLight);
    );
 
  zrunk.position.set(5,0,-5);
- zrunk.visible = true;
+ zrunk.visible = false;
  colliders.push(zrunk);
  scene.add(zrunk);
 
