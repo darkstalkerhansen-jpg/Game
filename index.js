@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1409");
+  window.alert("version 0.1409.");
 
  resetGameState();
  LVL1();
@@ -260,7 +260,6 @@ scene.add(ambientLight);
  const treecluster = new THREE.Group();
  treecluster.add(tree);
  treecluster.add(tree1);
- treecluster.add(tree2);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
  scene.add(treecluster);
