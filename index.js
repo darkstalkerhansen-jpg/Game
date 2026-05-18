@@ -86,12 +86,36 @@ const newLoader = new THREE.GLTFLoader();
     // Adjusted smaller size
    housemodel.position.set(30,0,0);
    housemodel.rotation.y = -Math.PI / 2;
-   colliders.push(housemodel);
+   addCollider(1,10,20,10);
+
    scene.add(housemodel);
   
    // Add emissive red glow effect
   });
  
+}
+
+function addCollider(xorz, start, end, other) {
+    const midpoint = (start + end) / 2;
+    const distance = Math.abs(start - end); // Simple and always accurate
+
+    if (xorz === 1) {
+        const colliderx = new THREE.Mesh(
+            new THREE.BoxGeometry(distance, 1000, 1),
+            new THREE.MeshBasicMaterial({ color: 0xff0000 }) // Added material so you can see it
+        );
+        colliderx.position.set(midpoint, 0, other);
+        colliders.push(colliderx);
+        scene.add(colliderx); // Crucial step
+    } else if (xorz === 2) {
+        const colliderz = new THREE.Mesh(
+            new THREE.BoxGeometry(1, 1000, distance),
+            new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+        );
+        colliderz.position.set(other, 0, midpoint);
+        colliders.push(colliderz);
+        scene.add(colliderz);
+    }
 }
 
 
@@ -124,7 +148,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1416");
+  window.alert("version 0.1417");
 
  resetGameState();
  LVL1();
@@ -153,7 +177,7 @@ function loadWalls(iteration=1) {
  const skyGeo = new THREE.SphereGeometry(50,32,16,true);
  const skyMat = new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.BackSide});
  const sky = new THREE.Mesh(skyGeo, skyMat);
-
+ scene.add(sky);
 
  loadhouse();
  
