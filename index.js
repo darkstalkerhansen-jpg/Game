@@ -110,10 +110,10 @@ function loadhouse() {
   
   newLoader.load('./house.glb', (gltf) => {
    const housemodel = gltf.scene;
-   housemodel.scale.setScalar(0.5); // Reduces size by a factor of 10
+   housemodel.scale.setScalar(2); // Reduces size by a factor of 10
 
     // Adjusted smaller size
-   housemodel.position.set(5,0,-5);
+   housemodel.position.set(0,0,0);
    scene.add(housemodel);
   
    // Add emissive red glow effect
@@ -151,7 +151,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1411");
+  window.alert("version 0.1412");
 
  resetGameState();
  LVL1();
