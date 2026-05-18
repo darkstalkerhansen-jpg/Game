@@ -110,7 +110,7 @@ function loadhouse() {
   
   newLoader.load('./house.glb', (gltf) => {
    const housemodel = gltf.scene;
-   housemodel.scale.setScalar(2); // Reduces size by a factor of 10
+   housemodel.scale.setScalar(100); // Reduces size by a factor of 10
 
     // Adjusted smaller size
    housemodel.position.set(0,0,0);
@@ -151,7 +151,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1412");
+  window.alert("version 0.1413");
 
  resetGameState();
  LVL1();
