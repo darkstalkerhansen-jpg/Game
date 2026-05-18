@@ -85,7 +85,7 @@ const newLoader = new THREE.GLTFLoader();
 
     // Adjusted smaller size
    housemodel.position.set(30,0,0);
-   housemodel.rotation.y = Math.PI / 2;
+   housemodel.rotation.y = -Math.PI / 2;
    scene.add(housemodel);
   
    // Add emissive red glow effect
@@ -123,7 +123,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1414");
+  window.alert("version 0.1415");
 
  resetGameState();
  LVL1();
@@ -152,15 +152,15 @@ function loadWalls(iteration=1) {
  const skyGeo = new THREE.SphereGeometry(50,32,16,true);
  const skyMat = new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.BackSide});
  const sky = new THREE.Mesh(skyGeo, skyMat);
- scene.add(sky);
+
 
  loadhouse();
  
  
 
-  addWall(0,1.5,-20,40,3,0.5,0x8b0b8b);
+  addWall(0,1.5,-20,40,3,0.5,0x444444);
   addWall(0,1.5,20,40,3,0.5,0x444444);
-   addWall(20,1.5,0,0.5,3,40,0x8b4513);
+   addWall(-20,1.5,0,0.5,3,40,0x444444)
  
 
  hill = new THREE.Mesh(
