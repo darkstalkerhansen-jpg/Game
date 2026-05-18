@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1409..");
+  window.alert("version 0.1409...");
 
  resetGameState();
  LVL1();
@@ -235,37 +235,8 @@ scene.add(ambientLight);
  const tree3 = tree.clone();
  tree3.position.set(5,8,8);
   
- 
 
- const tee = new THREE.Group();
- tee.add(trunk);
- colliders.push(tee);
- const tee1 = tee.clone();
- tee1.position.set(-5,0,-5);
- colliders.push(tee1); 
- scene.add(tee1);
- const tee2 = tree.clone();
- tee2.position.set(5,0,-5);
-  colliders.push(tee2) 
- 
- scene.add(tee2);
- const tee3 = tee.clone();
- tee3.position.set(5,0,8);
-  colliders.push(tee3); 
- 
- scene.add(tee3);
 
- 
- 
- const teecluster = new THREE.Group();
- teecluster.add(tee);
- teecluster.add(tee1);
- teecluster.add(tee2);
- teecluster.add(tee3);
- teecluster.position.set(-10,0,5);
- scene.add(teecluster);
- 
- 
  });
 
  loader.load('./tree2.glb', (gltf) => {
