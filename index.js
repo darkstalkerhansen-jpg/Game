@@ -86,6 +86,7 @@ const newLoader = new THREE.GLTFLoader();
     // Adjusted smaller size
    housemodel.position.set(30,0,0);
    housemodel.rotation.y = -Math.PI / 2;
+   colliders.push(housemodel);
    scene.add(housemodel);
   
    // Add emissive red glow effect
@@ -123,7 +124,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1415");
+  window.alert("version 0.1416");
 
  resetGameState();
  LVL1();
@@ -143,7 +144,7 @@ function loadWalls(iteration=1) {
  document.body.appendChild(renderer.domElement);
  FLASHLIGHTON=false; INTERACT = 0;
  const playerpos = camera.position;
-  const floorGeo = new THREE.PlaneGeometry(40,40);
+  const floorGeo = new THREE.PlaneGeometry(80,80);
  const floorMat = new THREE.MeshPhongMaterial({color:0xf0f0ff});
  const floor = new THREE.Mesh(floorGeo, floorMat);
  floor.rotation.x = -Math.PI/2;
@@ -424,7 +425,7 @@ function animate() {
 
    if (!checkCollision(intendedPos)) camera.position.copy(intendedPos);
 
-   const bounds = currentLevel === 3 ? 38 : 28;
+   const bounds = currentLevel === 3 ? 38 : 80;
    camera.position.x = Math.max(-bounds, Math.min(bounds, camera.position.x));
    camera.position.z = Math.max(-bounds * 2, Math.min(bounds * 2, camera.position.z));
 
