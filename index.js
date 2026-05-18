@@ -137,7 +137,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1407");
+  window.alert("version 0.1408");
 
  resetGameState();
  LVL1();
@@ -261,7 +261,7 @@ scene.add(ambientLight);
  
  
  const treecluster = new THREE.Group();
- treecluster.add(tree1);
+ treecluster.add(tree)
  treecluster.add(tree2);
  treecluster.add(tree3);
  treecluster.position.set(-10,0,5);
@@ -278,6 +278,83 @@ scene.add(ambientLight);
  
  });
 
+ loader.load('./tree2.glb', (gltf) => {
+   const zreea = gltf.scene;
+   zreea.scale.setScalar(0.1); // Reduces size by a factor of 10
+
+    // Adjusted smaller size
+   zreea.position.set(5,0,-5);
+  
+   // Add emissive red glow effect
+  
+   scene.add(zreea);
+   zrunk = new THREE.Mesh(
+  new THREE.BoxGeometry(1,10,1)
+   );
+
+ zrunk.position.set(5,0,-5);
+ zrunk.visible = true;
+ colliders.push(zrunk);
+ scene.add(zrunk);
+
+ const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Soft white light
+scene.add(ambientLight);
+
+ const zree = new THREE.Group();
+ zree.add(zreea);
+ zree.add(ambientLight);
+ const zree1 = zree.clone();
+ zree1.position.set(-5,0,-5);
+  
+ scene.add(zree1);
+ const zree2 = zree.clone();
+ zree2.position.set(5,0,-5);
+  
+ scene.add(zree2);
+ const zree3 = zree.clone();
+ zree3.position.set(5,0,8);
+  
+ scene.add(zree3);
+
+
+ const zee = new THREE.Group();
+ zee.add(zrunk);
+ colliders.push(zee);
+ const zee1 = zee.clone();
+ zee1.position.set(-5,0,-5);
+ colliders.push(zee1); 
+ scene.add(zee1);
+ const zee2 = zree.clone();
+ zee2.position.set(5,0,-5);
+  colliders.push(zee2) 
+ 
+ scene.add(zee2);
+ const zee3 = zee.clone();
+ zee3.position.set(5,0,8);
+  colliders.push(zee3); 
+ 
+ scene.add(zee3);
+
+ 
+ 
+ const zreecluster = new THREE.Group();
+ zreecluster.add(zree);
+ zreecluster.add(zree1);
+ zreecluster.add(zree2);
+ zreecluster.add(zree3);
+ zreecluster.position.set(10,0,5);
+ scene.add(zreecluster);
+
+ const zeecluster = new THREE.Group();
+ zeecluster.add(zee);
+ zeecluster.add(zee1);
+ zeecluster.add(zee2);
+ zeecluster.add(zee3);
+ zeecluster.position.set(10,0,5);
+ scene.add(zeecluster);
+ 
+ 
+ });
 
 
 addWall(3,0,-10,1,5,15);
