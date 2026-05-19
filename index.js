@@ -14,6 +14,7 @@ let RUN = false;
 let headBobTimer = 0;
 let INTERACT = 0;
 let firsttime= true;
+debugbutton = "off";
 
 // Fix typos/undefined globals referenced later
 let corruptedP = 0; // speed modifier
@@ -43,6 +44,14 @@ function updateHealthBar() {
  else healthFill.style.background = 'linear-gradient(to right, #ff3300, #990000)';
 }
 
+
+function debugcollidermenuthingidk() {
+  if (debugbutton==="off") {
+    debugbutton = "on";
+  } else if (debugbutton==="on") {
+    debugbutton==="off";
+  }
+}
 
 
 function updateBatteryBar() {
@@ -135,6 +144,12 @@ function addCollider(xorz, start, end, other, y=1000) {
             new THREE.MeshBasicMaterial({ color: 0xff0000 }) // Added material so you can see it
         );
         colliderx.position.set(midpoint, 0, other);
+        if (debugbutton==="on") {
+
+        } else {
+        colliderx.visible = false;
+        }
+        
         colliders.push(colliderx);
         scene.add(colliderx); // Crucial step
     } else if (xorz === 2) {
@@ -143,6 +158,11 @@ function addCollider(xorz, start, end, other, y=1000) {
             new THREE.MeshBasicMaterial({ color: 0x00ff00 })
         );
         colliderz.position.set(other, 0, midpoint);
+        if (debugbutton==="on") {
+
+        } else {
+        colliderz.visible = false;
+        }
         colliders.push(colliderz);
         scene.add(colliderz);
     }
@@ -178,7 +198,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1425");
+  window.alert("version 0.1426");
 
  resetGameState();
  LVL1();
