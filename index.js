@@ -92,13 +92,19 @@ const newLoader = new THREE.GLTFLoader();
    const light = new THREE.DirectionalLight(0x444444, 2.5); // Color, Intensity
 light.position.set(10, 5, 6); 
 scene.add(light);
+const houselight = light.clone();
+houselight.position.set(20,3,3);
+scene.add(houselight);
+const houselight2 = light.clone();
+houselight2.position.set(28,3,-1.5);
+scene.add(houselight2);
+
 
    addCollider(1,18.5,15,3);
    addCollider(2,3,8,18);
    addCollider(1,18,22.5,8.2);
    addCollider(2,7.4,3,22.2);
    addCollider(1,22.2,33.3,3);
-   addCollider(2,3,-7,33.3);
    addCollider(1,33.3,15,-6.5);
 
    scene.add(housemodel);
@@ -163,7 +169,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1423");
+  window.alert("version 0.1424");
 
  resetGameState();
  LVL1();
@@ -183,14 +189,14 @@ function loadWalls(iteration=1) {
  document.body.appendChild(renderer.domElement);
  FLASHLIGHTON=false; INTERACT = 0;
  const playerpos = camera.position;
-  const floorGeo = new THREE.PlaneGeometry(80,80);
+  const floorGeo = new THREE.PlaneGeometry(150,150);
  const floorMat = new THREE.MeshPhongMaterial({color:0x8b4513});
  const floor = new THREE.Mesh(floorGeo, floorMat);
  floor.rotation.x = -Math.PI/2;
  scene.add(floor);
 
  const skyGeo = new THREE.SphereGeometry(50,32,16,true);
- const skyMat = new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.BackSide});
+ const skyMat = new THREE.MeshBasicMaterial({color:0x5f4f4f, side:THREE.BackSide});
  const sky = new THREE.Mesh(skyGeo, skyMat);
  scene.add(sky);
 
