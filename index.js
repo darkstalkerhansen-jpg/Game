@@ -88,26 +88,20 @@ const newLoader = new THREE.GLTFLoader();
    housemodel.position.set(30,0,0);
    housemodel.rotation.y = -Math.PI / 2;
    
+   addCollider(1,18.5,15,3);
+   addCollider(2,3,8,18);
+   addCollider(1,18,22.5,8.2);
+   addCollider(2,7.4,3,22.2);
+   addCollider(1,22.2,33.3,3);
+   addCollider(2,3,-7,33.3);
+   addCollider(1,33.3,15,-6.5);
 
    scene.add(housemodel);
   
    // Add emissive red glow effect
   });
 
-  newLoader.load('./coliders.glb', (gltf) => {
-   const collision = gltf.scene;
-   collision.scale.setScalar(150); // Reduces size by a factor of 10
-
-    // Adjusted smaller size
-   collision.position.set(30,0,0);
-   collision.rotation.y = -Math.PI / 2;
-   
-    colliders.push(collision);
-   scene.add(collision);
   
-   // Add emissive red glow effect
-  });
- 
  
 }
 
@@ -164,7 +158,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1421");
+  window.alert("version 0.1422");
 
  resetGameState();
  LVL1();
