@@ -80,14 +80,19 @@ function loadhouse() {
 
 const newLoader = new THREE.GLTFLoader();
 
-  newLoader.load('./house.glb', (gltf) => {
+  newLoader.load('./housetest.glb', (gltf) => {
    const housemodel = gltf.scene;
    housemodel.scale.setScalar(150); // Reduces size by a factor of 10
 
     // Adjusted smaller size
    housemodel.position.set(30,0,0);
    housemodel.rotation.y = -Math.PI / 2;
-   
+
+
+   const light = new THREE.DirectionalLight(0x444444, 2.5); // Color, Intensity
+light.position.set(10, 5, 6); 
+scene.add(light);
+
    addCollider(1,18.5,15,3);
    addCollider(2,3,8,18);
    addCollider(1,18,22.5,8.2);
@@ -158,7 +163,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1422");
+  window.alert("version 0.1423");
 
  resetGameState();
  LVL1();
@@ -179,7 +184,7 @@ function loadWalls(iteration=1) {
  FLASHLIGHTON=false; INTERACT = 0;
  const playerpos = camera.position;
   const floorGeo = new THREE.PlaneGeometry(80,80);
- const floorMat = new THREE.MeshPhongMaterial({color:0xf0f0ff});
+ const floorMat = new THREE.MeshPhongMaterial({color:0x8b4513});
  const floor = new THREE.Mesh(floorGeo, floorMat);
  floor.rotation.x = -Math.PI/2;
  scene.add(floor);
@@ -188,6 +193,8 @@ function loadWalls(iteration=1) {
  const skyMat = new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.BackSide});
  const sky = new THREE.Mesh(skyGeo, skyMat);
  scene.add(sky);
+
+renderer.shadowMap.enabled = true
 
  loadhouse();
  
@@ -240,12 +247,9 @@ function loadWalls(iteration=1) {
  colliders.push(trunk);
  scene.add(trunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Soft white light
-scene.add(ambientLight);
-
+ 
  const tree = new THREE.Group();
  tree.add(treea);
- tree.add(ambientLight);
  const tree1 = tree.clone();
  tree1.position.set(-5,0,-5);
   
@@ -314,12 +318,9 @@ scene.add(ambientLight);
  colliders.push(zrunk);
  scene.add(zrunk);
 
- const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Soft white light
-scene.add(ambientLight);
-
+ 
  const zree = new THREE.Group();
  zree.add(zreea);
- zree.add(ambientLight);
  const zree1 = zree.clone();
  zree1.position.set(-5,0,-5);
   
