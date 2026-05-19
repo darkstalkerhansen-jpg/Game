@@ -99,13 +99,22 @@ const houselight2 = light.clone();
 houselight2.position.set(28,3,-1.5);
 scene.add(houselight2);
 
+const brother = new THREE.Mesh(new THREE.BoxGeometry(2,3,2));
+brother.visible = false;
+brother.position.set(33,2,5.5);
+colliders.push(brother);
+scene.add(brother);
 
+addCollider(2,4.5,13,25);
+addCollider(1,33.5,45,13.5);
+addCollider(2,-8,15,43)
    addCollider(1,18.5,15,3);
    addCollider(2,3,8,18);
    addCollider(1,18,22.5,8.2);
    addCollider(2,7.4,3,22.2);
-   addCollider(1,22.2,33.3,3);
-   addCollider(1,33.3,15,-6.5);
+   addCollider(1,22.2,25,3);
+   addCollider(1,43,15,-6.5);
+   
 
    scene.add(housemodel);
   
@@ -169,7 +178,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1424");
+  window.alert("version 0.1425");
 
  resetGameState();
  LVL1();
