@@ -1,0 +1,60 @@
+html, body { margin:0; padding:0; overflow:hidden; background:#111; }
+ canvas {
+   display: block;
+   position: fixed;
+   top: 20vh;
+   left: 0;
+   width: 100vw;
+   height: 50vh;
+   z-index: 0;
+ }
+ #healthBar {
+   position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+   width: 220px; height: 18px; border: 2px solid #444; background: rgba(0,0,0,0.6);
+   border-radius: 10px; overflow: hidden; z-index: 80;
+ }
+ #batteryBar {
+   position: fixed; top: 220px; left: 5%; transform: translateX(+50%);
+   width: 100px; height: 160px; border: 2px solid #444; background: rgba(0,0,0,0.6);
+   border-radius: 10px; overflow: hidden; z-index: 80; opacity: 0; rotate: 180deg;
+ }
+ #batteryFill {
+   height: 100%; width: 100%; background: linear-gradient(to bottom, #00ff66, #f7ff00);
+   transition: width 0.15s ease-out, background 0.2s linear; opacity: 0;
+ }
+ #healthFill {
+   height: 100%; width: 100%; background: linear-gradient(to right, #00ff66, #f7ff00);
+   transition: width 0.15s ease-out, background 0.2s linear;
+ }
+
+ .pushable {
+    background: #5d5d5d; /* Dark "bottom" layer */
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    z-index: 100;
+    user-select: none;
+  }
+  .front {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: #3498db; /* Blue "top" layer */
+    color: white;
+    transform: translateY(-4px); /* Creates the 3D lift */
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1);
+    z-index:100;
+    user-select: none;
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px); /* Lifts slightly more on hover */
+  }
+  .pushable:active .front {
+    transform: translateY(-2px); /* "Pushes" down when clicked */
+ }
+
+
+ 

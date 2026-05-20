@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<script>
+ window.onerror = (msg, src, line, col, err) => {
+   alert(msg + "\n" + line + ":" + col);
+ };
+</script>
 
+
+<title>game</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<div id="coordsInfo" style="position: fixed; top: 45px; right: 20px; color: #fff; font-family: sans-serif; font-size: 1.2em; z-index: 85; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px;">Pos: (0.0, 1.6, 0.0)</div>
+<div id="healthBar"><div id="healthFill"></div></div>
+<div id="batteryBar"><div id="batteryFill"></div></div>
+<div class="controls">
+  <button class="pushable" id="up" onclick="moveF=1; moveB=0; moveL=0; moveR=0;"><span class="front">▲</span></button>
+  <button class="pushable" id="down" onclick="moveF=0; moveB=0; moveL=0; moveR=0;"><span class="front">▼</span></button>
+  <button class="pushable" id="up" onclick="INTERACT=1; setTimeout(() => {INTERACT=0;},2000);"><span class="front">●</span></button>
+  <button class="pushable" id="up" onclick="debugcollidermenuthingidk()"><span class="front">|¯_¯|</span></button>
+  
+  <div class="row">
+    <button class="pushable" id="left" onclick="moveF=0; moveB=0; moveL=1; moveR=0;"><span class="front">◀</span></button>
+    <button class="pushable" id="down" onclick="moveF=0; moveB=1; moveL=0; moveR=0;"><span class="front">▼</span></button>
+    <button class="pushable" id="right" onclick="moveF=0; moveB=0; moveL=0; moveR=1;"><span class="front">▶</span></button>
+  </div>
+</div>
+
+<video id="tv-video" loop muted playsinline style="display:none">
+    <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Container for the 3D Canvas -->
+    <div id="container"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+
+
+<script src="index.js"></script>
+</body>
+</html>
