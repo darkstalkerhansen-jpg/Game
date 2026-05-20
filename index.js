@@ -199,7 +199,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1428");
+  window.alert("version 0.1429");
 
  resetGameState();
  LVL1();
