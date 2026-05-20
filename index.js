@@ -118,11 +118,11 @@ addCollider(2,4.5,13,25);
 addCollider(1,33.5,45,13.5);
 addCollider(2,-8,15,43)
    addCollider(1,18.5,15,5);
-   addCollider(2,3,8,18);
+   addCollider(2,4.5,10,18);
    addCollider(1,18,22.5,8.2);
-   addCollider(2,7.4,3,22.2);
-   addCollider(1,22.2,25,3);
-   addCollider(1,43,15,-6.5);
+   addCollider(2,7.4,4.5,22.2);
+   addCollider(1,22.2,25,4.5);
+   addCollider(1,43,15,-5);
 }, 1000);
    
 
@@ -199,7 +199,7 @@ function flashObserver() {
 
 function startGame() {
 
-  window.alert("version 0.1427");
+  window.alert("version 0.1428");
 
  resetGameState();
  LVL1();
